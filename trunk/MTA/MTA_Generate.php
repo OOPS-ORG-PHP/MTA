@@ -1,6 +1,6 @@
 <?php
 /**
- * Project: MTA_Generate :: generating mail section abstraction layer
+ * Project: MTA_Generate :: generating mail section abstraction layer<br />
  * File:    MTA/MTA_Generate.php
  *
  * MTA_Generate class는 메일 발송 내용을 구성하기 위한 추상
@@ -154,9 +154,9 @@ Class MTA_Generate extends MTA_Socket {
 	 * @access private
 	 * @return bool 에러 발생시, myException으로 에러 메시지를 보낸다.
 	 * @param  string $addr 검사할 메일 주소. 지원 형식은 다음과 같다.
-	 *                      user@domain.com
-	 *                      &lt;user@domain.com&gt;
-	 *                      이름 &lt;user@domain.com&gt;
+	 *                    - user@domain.com
+	 *                    - &lt;user@domain.com&gt;
+	 *                    - 이름 &lt;user@domain.com&gt;
 	 */
 	public function addr (&$addr) {
 		$addr = trim ($addr);
