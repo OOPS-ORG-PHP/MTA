@@ -84,7 +84,7 @@ Class MTA_Generate extends MTA_Socket {
 	 * mail boundary 생성
 	 *
 	 * @access public
-	 * @return string
+	 * @return string boundary 문자열
 	 */
 	public function boundary () {
 		$uc = uniqid ();
@@ -104,7 +104,7 @@ Class MTA_Generate extends MTA_Socket {
 	 * Message ID 생성
 	 *
 	 * @access public
-	 * @return string
+	 * @return string Message-ID
 	 */
 	public function msgid () {
 		return '<' . date ('YmdHis') . rand () . '@' . gethostname () . '>';
@@ -116,7 +116,7 @@ Class MTA_Generate extends MTA_Socket {
 	 * 메일 헤더에서 사용할 시간 형식 반환
 	 *
 	 * @access public
-	 * @return string
+	 * @return string Wed, 8 Jun 2013 05:32:11 +900
 	 */
 	public function date () {
 		return date ('D, d M Y H:i:s O');
@@ -153,10 +153,10 @@ Class MTA_Generate extends MTA_Socket {
 	 *
 	 * @access private
 	 * @return bool 에러 발생시, myException으로 에러 메시지를 보낸다.
-	 * @param  string $addr 검사할 메일 주소. 지원 형식은 다음과 같다.
+	 * @param  string &$addr 검사할 메일 주소. 지원 형식은 다음과 같다.
 	 *                    - user@domain.com
-	 *                    - &lt;user@domain.com&gt;
-	 *                    - 이름 &lt;user@domain.com&gt;
+	 *                    - <user@domain.com>
+	 *                    - 이름 <user@domain.com>
 	 */
 	public function addr (&$addr) {
 		$addr = trim ($addr);
@@ -470,7 +470,8 @@ Class MTA_Generate extends MTA_Socket {
 	 *
 	 * @access protect
 	 * @return string
-	 * @param array attach 파일 경로를 포함한 배열
+	 * @param array $attaches 파일 경로를 포함한 배열
+	 * @param string $bound boundary 문자열
 	 */
 	public function attach ($attaches, $bound) {
 		if ( ! is_array ($attaches) )

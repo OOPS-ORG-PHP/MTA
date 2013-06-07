@@ -103,15 +103,15 @@ Class MTA extends MTA_Generate {
 	 *
 	 * @access public
 	 * @return string If occur error, throw excption
-	 * @param  object $o mail object
-	 *       - o->from   : Sender address
-	 *       - o->to     : array of Reciever address
-	 *       - o->cc     : array of See also reciever address
-	 *       - o->bcc    : array of Hidden see also reciever address
-	 *       - o->subjet : mail subject
-	 *       - o->body   : mail contents
-	 *       - o->pbody  : planin/text mail contents (optional)
-	 *       - o->attach : attached files (array / optional)
+	 * @param  object $v mail object
+	 *       - $v->from   : Sender address
+	 *       - $v->to     : array of Reciever address
+	 *       - $v->cc     : array of See also reciever address
+	 *       - $v->bcc    : array of Hidden see also reciever address
+	 *       - $v->subjet : mail subject
+	 *       - $v->body   : mail contents
+	 *       - $v->pbody  : planin/text mail contents (optional)
+	 *       - $v->attach : attached files (array / optional)
 	 */
 	public function source ($v) {
 		$template = file_get_contents ('MTA/template.txt', true);

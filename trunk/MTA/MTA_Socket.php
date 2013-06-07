@@ -115,7 +115,7 @@ Class MTA_Socket {
 	 *       - o->body   : mail contents
 	 *       - o->pbody  : planin/text mail contents (optional)
 	 *       - o->attach : attached files (array / optional)
-	 * @param string $template 메일 본문
+	 * @param string &$template 메일 본문
 	 */
 	protected function socket_send ($o, &$template) {
 		$this->error = false;
