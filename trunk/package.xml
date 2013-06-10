@@ -3,25 +3,18 @@
 	<!-- $Id$ -->
 	<name>MTA</name>
 	<channel>pear.oops.org</channel>
-	<summary>pear Mail Transfer Agent(MTA)</summary>
-	<description>pear_MTA는 php mail function을 대체할 수 있으며, smtp server나
-smtp daemon이 없더라도 자체적으로 메일을 발송할 수 있는 기능을
-제공한다.
-
-또한 alternative/mixed 방식의 mail body를 생성하는 method를 제
-공하며, 발송 시 중복된 메일 주소를 압축하여 중복된 메일 서버에
-여러번 접근하지 않도록 최적화 되어 있다.
-</description>
+	<summary>Mail Transfer Agent(MTA) Abstraction Layer</summary>
+	<description>MTA is a Mail Transfer Agent(MTA) abstraction layer providing</description>
 	<lead>
 		<name>JoungKyun.Kim</name>
 		<user>joungkyun</user>
 		<email>joungkyun@gmail.com</email>
 		<active>yes</active>
 	</lead>
-	<date>2013-06-08</date>
-	<time>04:32:23</time>
+	<date>2013-06-10</date>
+	<time>15:23:18</time>
 	<version>
-		<release>1.0.0</release>
+		<release>1.0.1</release>
 		<api>1.0.0</api>
 	</version>
 	<stability>
@@ -29,14 +22,15 @@ smtp daemon이 없더라도 자체적으로 메일을 발송할 수 있는 기�
 		<api>stable</api>
 	</stability>
 	<license uri="http://www.opensource.org/licenses/bsd-license.php">BSD</license>
-	<notes>* release 1.0.0
+	<notes>* send() 시에 to/cc/bcc list들중 일부 실패시에 전체 list가 발송 실패하는 문제 수정
+* 발송시 rcpt list중 일부만 전송되는 것을 확인하기 위하여 rcptlog property를 추가
 </notes>
 	<contents>
 		<dir name="/">
-			<file role="php" md5sum="4ac21f1e1000193c9ff8f46d79db0141" name="MTA/MTA_Generate.php" />
-			<file role="php" md5sum="e48581c6ce05b0b1271d99a575c5493a" name="MTA/MTA_Socket.php" />
-			<file role="php" md5sum="66a5a51ad016fd05345232127558d636" name="MTA/template.txt" />
-			<file role="php" md5sum="8095a194ff839501ea84c2599fe430a7" name="MTA.php" />
+			<file role="php" md5sum="eed66f6481f5311527f02286d63b699a" name="MTA/MTA_Generate.php" />
+			<file role="php" md5sum="81d790b7f19878f1d7fed38162498b3e" name="MTA/MTA_Socket.php" />
+			<file role="php" md5sum="aef42c40bdec42a32629ce1543c8edc4" name="MTA/template.txt" />
+			<file role="php" md5sum="cb0b734261bff782bff145ba5bd09d51" name="MTA.php" />
 		</dir>
 	</contents>
 	<dependencies>
@@ -56,6 +50,21 @@ smtp daemon이 없더라도 자체적으로 메일을 발송할 수 있는 기�
 	</dependencies>
 	<phprelease />
 	<changelog>
+		<release>
+			<version>
+				<release>1.0.1</release>
+				<api>1.0.0</api>
+			</version>
+			<stability>
+				<release>stable</release>
+				<api>stable</api>
+			</stability>
+			<date>2013-06-10</date>
+			<license uri="http://www.opensource.org/licenses/bsd-license.php">BSD</license>
+			<notes>* send() 시에 to/cc/bcc list들중 일부 실패시에 전체 list가 발송 실패하는 문제 수정
+* 발송시 rcpt list중 일부만 전송되는 것을 확인하기 위하여 rcptlog property를 추가
+</notes>
+		</release>
 		<release>
 			<version>
 				<release>1.0.0</release>

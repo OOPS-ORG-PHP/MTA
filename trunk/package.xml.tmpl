@@ -14,7 +14,7 @@
 	<date>@curdate@</date>
 	<time>@curtime@</time>
 	<version>
-		<release>1.0.0</release>
+		<release>1.0.1</release>
 		<api>1.0.0</api>
 	</version>
 	<stability>
@@ -22,7 +22,8 @@
 		<api>stable</api>
 	</stability>
 	<license uri="http://www.opensource.org/licenses/bsd-license.php">BSD</license>
-	<notes>* release 1.0.0
+	<notes>* send() 시에 to/cc/bcc list들중 일부 실패시에 전체 list가 발송 실패하는 문제 수정
+* 발송시 rcpt list중 일부만 전송되는 것을 확인하기 위하여 rcptlog property를 추가
 </notes>
 	<contents>
 		<dir name="/">
@@ -51,7 +52,7 @@
 	<changelog>
 		<release>
 			<version>
-				<release>1.0.0</release>
+				<release>1.0.1</release>
 				<api>1.0.0</api>
 			</version>
 			<stability>
@@ -59,6 +60,21 @@
 				<api>stable</api>
 			</stability>
 			<date>@curdate@</date>
+			<license uri="http://www.opensource.org/licenses/bsd-license.php">BSD</license>
+			<notes>* send() 시에 to/cc/bcc list들중 일부 실패시에 전체 list가 발송 실패하는 문제 수정
+* 발송시 rcpt list중 일부만 전송되는 것을 확인하기 위하여 rcptlog property를 추가
+</notes>
+		</release>
+		<release>
+			<version>
+				<release>1.0.0</release>
+				<api>1.0.0</api>
+			</version>
+			<stability>
+				<release>stable</release>
+				<api>stable</api>
+			</stability>
+			<date>2013-06-08</date>
 			<license uri="http://www.opensource.org/licenses/bsd-license.php">BSD</license>
 			<notes>* release 1.0.0
 </notes>
