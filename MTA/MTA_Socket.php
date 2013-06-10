@@ -104,17 +104,24 @@ Class MTA_Socket {
 	 * 메일 발송
 	 *
 	 * @access protected
-	 * @return object  발송 결과(status, error properity를 반환한다.
+	 * @return object  발송 결과를 object로 반환한다.
+	 *                 - r->status : 성공 실패 여부를 boolean으로 반환
+	 *                 - r->error  : status false시 에러 메시지
+	 *                 - r->rcptlog : rcpt to에 대한 log
+	 *
+	 *    RCPT list별로 확인을 위해서 status가 true이더라도 rcptlog를
+	 *    확인하는 것이 필요
+	 *
 	 * @param  object $o mail object
 	 *       - o->rpath  : return path (optional)
 	 *       - o->from   : Sender address
-	 *       - o->to     : Reciever address
-	 *       - o->cc     : See also reciever address
-	 *       - o->bcc    : Hidden see also reciever address
+	 *       - o->to     : [Array] Reciever address
+	 *       - o->cc     : [Array] See also reciever address
+	 *       - o->bcc    : [Array] Hidden see also reciever address
 	 *       - o->subjet : mail subject
 	 *       - o->body   : mail contents
 	 *       - o->pbody  : planin/text mail contents (optional)
-	 *       - o->attach : attached files (array / optional)
+	 *       - o->attach : [Array] attached files (optional)
 	 * @param string &$template 메일 본문
 	 */
 	protected function socket_send ($o, &$template) {
@@ -152,12 +159,16 @@ Class MTA_Socket {
 				continue;
 			}
 
-			if ( $this->rcptto ($val) === false ) {
+			if ( ($r = $this->rcptto ($val, $log)) === false ) {
 				$r->$vendor->status = false;
 				$r->$vendor->error = $this->error;
+				$r->$vendor->rcptlog = $log;
 				$this->error = null;
 				$this->close ();
 				continue;
+			} else {
+				# 일부 실패를 위해서 확인은 해야 함!
+				$r->$vendor->rcptlog = $log;
 			}
 
 			if ( $this->data ($template) === false ) {
@@ -236,26 +247,41 @@ Class MTA_Socket {
 	}
 	// }}}
 
-	// {{{ (bool) protected MTA_Socket::rcptto ($o)
+	// {{{ (bool) protected MTA_Socket::rcptto ($o, &$log)
 	/**
 	 * RCPT 명령 전송
 	 * 
 	 * @access protected
 	 * @return bool
 	 * @param  object $o MTA_Socket::target_object method의 rcpt list
+	 * @param  array &$log 발송 로그
 	 */
-	protected function rcptto ($o) {
+	protected function rcptto ($o, &$log) {
+		$status = array ();
 		$this->error = false;
 		if ( ! is_array ($o->rcpt) || ! count ($o->rcpt) ) {
 			$this->error = 'No RCPT list';
 			return false;
 		}
 
-		foreach ( $o->rcpt as $addr )
+		$no = count ($o->rcpt);
+		$fno = 0;
+
+		foreach ( $o->rcpt as $addr ) {
 			$this->write ('RCPT To:' . $addr);
 
-		if ( $this->read () === false )
+			if ( $this->read () === false ) {
+				$log[] = $this->error;
+				$fno++;
+			} else
+				$log[] = sprintf ('%s Success', $addr);
+		}
+
+		# 모든 rcpt list가 실패
+		if ( $fno == $no ) {
+			$this->error = 'Failure all RCPT list';
 			return false;
+		}
 
 		return true;
 	}
@@ -337,6 +363,7 @@ Class MTA_Socket {
 	 * @return string
 	 */
 	protected function read () {
+		$this->error = null;
 		$buf = fread ($this->sock, 8102);
 
 		$code = substr ($buf, 0, 3);
