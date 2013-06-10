@@ -1,7 +1,7 @@
 <?php
 /**
- * Project: pear Mail Transfer Agent(MTA)<br />
- * File:    MTA.php<br />
+ * Project: pear Mail Transfer Agent(MTA)
+ * File:    MTA.php
  * Dependency: {@link http://svn.oops.org/wsvn/PHP.pear_myException pear_myException}
  *
  * pear_MTA는 php mail function을 대체할 수 있으며, smtp server나
@@ -78,15 +78,15 @@ Class MTA extends MTA_Generate {
 	 * @access public
 	 * @return object 발송 결과(status, error properities)를 반환한다.
 	 * @param  object $o mail object
-	 *       - o->rpath  : return path (optional)
-	 *       - o->from   : Sender address
-	 *       - o->to     : Reciever address
-	 *       - o->cc     : See also reciever address
-	 *       - o->bcc    : Hidden see also reciever address
-	 *       - o->subjet : mail subject
-	 *       - o->body   : mail contents
-	 *       - o->pbody  : planin/text mail contents (optional)
-	 *       - o->attach : attached files (array / optional)
+	 *         o->rpath  : return path (optional)
+	 *         o->from   : Sender address
+	 *         o->to     : Reciever address
+	 *         o->cc     : See also reciever address
+	 *         o->bcc    : Hidden see also reciever address
+	 *         o->subjet : mail subject
+	 *         o->body   : mail contents
+	 *         o->pbody  : planin/text mail contents (optional)
+	 *         o->attach : attached files (array / optional)
 	 */
 	public function send ($o) {
 		$template = $this->source ($o);
@@ -103,15 +103,15 @@ Class MTA extends MTA_Generate {
 	 *
 	 * @access public
 	 * @return string If occur error, throw excption
-	 * @param  object $v mail object
-	 *       - $v->from   : Sender address
-	 *       - $v->to     : array of Reciever address
-	 *       - $v->cc     : array of See also reciever address
-	 *       - $v->bcc    : array of Hidden see also reciever address
-	 *       - $v->subjet : mail subject
-	 *       - $v->body   : mail contents
-	 *       - $v->pbody  : planin/text mail contents (optional)
-	 *       - $v->attach : attached files (array / optional)
+	 * @param  object $o mail object
+	 *         o->from   : Sender address
+	 *         o->to     : array of Reciever address
+	 *         o->cc     : array of See also reciever address
+	 *         o->bcc    : array of Hidden see also reciever address
+	 *         o->subjet : mail subject
+	 *         o->body   : mail contents
+	 *         o->pbody  : planin/text mail contents (optional)
+	 *         o->attach : attached files (array / optional)
 	 */
 	public function source ($v) {
 		$template = file_get_contents ('MTA/template.txt', true);

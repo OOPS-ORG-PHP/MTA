@@ -1,6 +1,6 @@
 <?php
 /**
- * Project: MTA_Socket :: pear_MTA socket abstraction layer<br />
+ * Project: MTA_Socket :: pear_MTA socket abstraction layer
  * File:    MTA/MTA_Socket.php
  *
  * eSNMP_Socket class는 소켓으로 메일을 발송하기 위한 추상
@@ -42,9 +42,9 @@ Class MTA_Socket {
 	 * @access protected
 	 * @return object
 	 * @param  object $o mail object
-	 *       - o->to  (array) to list
-	 *       - o->cc  (array) cc list
-	 *       - o->bcc (array) bcc list
+	 *         o->to  (array) to list
+	 *         o->cc  (array) cc list
+	 *         o->bcc (array) bcc list
 	 */
 	protected function target_object ($o) {
 		if ( is_array ($o->to) )
@@ -106,16 +106,16 @@ Class MTA_Socket {
 	 * @access protected
 	 * @return object  발송 결과(status, error properity를 반환한다.
 	 * @param  object $o mail object
-	 *       - o->rpath  : return path (optional)
-	 *       - o->from   : Sender address
-	 *       - o->to     : Reciever address
-	 *       - o->cc     : See also reciever address
-	 *       - o->bcc    : Hidden see also reciever address
-	 *       - o->subjet : mail subject
-	 *       - o->body   : mail contents
-	 *       - o->pbody  : planin/text mail contents (optional)
-	 *       - o->attach : attached files (array / optional)
-	 * @param string &$template 메일 본문
+	 *         o->rpath  : return path (optional)
+	 *         o->from   : Sender address
+	 *         o->to     : Reciever address
+	 *         o->cc     : See also reciever address
+	 *         o->bcc    : Hidden see also reciever address
+	 *         o->subjet : mail subject
+	 *         o->body   : mail contents
+	 *         o->pbody  : planin/text mail contents (optional)
+	 *         o->attach : attached files (array / optional)
+	 * @param string $template 메일 본문
 	 */
 	protected function socket_send ($o, &$template) {
 		$this->error = false;
@@ -201,14 +201,14 @@ Class MTA_Socket {
 	 * @access protected
 	 * @return bool
 	 * @param  object $o mail object
-	 *       - o->from   : Sender address
-	 *       - o->to     : array of Reciever address
-	 *       - o->cc     : array of See also reciever address
-	 *       - o->bcc    : array of Hidden see also reciever address
-	 *       - o->subjet : mail subject
-	 *       - o->body   : mail contents
-	 *       - o->pbody  : planin/text mail contents (optional)
-	 *       - o->attach : attached files (array / optional)
+	 *         o->from   : Sender address
+	 *         o->to     : array of Reciever address
+	 *         o->cc     : array of See also reciever address
+	 *         o->bcc    : array of Hidden see also reciever address
+	 *         o->subjet : mail subject
+	 *         o->body   : mail contents
+	 *         o->pbody  : planin/text mail contents (optional)
+	 *         o->attach : attached files (array / optional)
 	 */
 	protected function mailfrom ($o) {
 		$this->error = false;
