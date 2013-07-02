@@ -212,7 +212,8 @@ Class MTA_Generate extends MTA_Socket {
 			$user = preg_replace ($src, $dst, $user);
 		}
 
-		if ( preg_match ('/[^a-z0-9.+]/i', $user) ) {
+		// UTF-8 한글 영역 추가
+		if ( preg_match ('/[^\x{1100}-\x{11FF}\x{3130}-\x{318F}\x{AC00}-\x{D7AF}a-z0-9.+_]/ui', $user) ) {
 			if ( $method )
 				return false;
 
