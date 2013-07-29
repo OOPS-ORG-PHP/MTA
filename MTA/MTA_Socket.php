@@ -159,6 +159,9 @@ Class MTA_Socket {
 				continue;
 			}
 
+			if ( isset ($log) )
+				unset ($log);
+
 			if ( $this->rcptto ($val, $log) === false ) {
 				$r->$vendor->status = false;
 				$r->$vendor->error = $this->error;
