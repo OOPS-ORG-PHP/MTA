@@ -76,24 +76,35 @@ Class MTA extends MTA_Generate {
 	 * 메일 발송
 	 *
 	 * @access public
-	 * @return object  발송 결과를 object로 반환한다.
-	 *                 - r->status : 성공 실패 여부를 boolean으로 반환
-	 *                 - r->error  : status false시 에러 메시지
-	 *                 - r->rcptlog : rcpt to에 대한 log
+	 * @return stdClass 발송 결과를 object로 반환한다.
 	 *
-	 *    RCPT list별로 확인을 위해서 status가 true이더라도 rcptlog를
-	 *    확인하는 것이 필요
+	 *   <pre>
+	 *   stdClass Object
+	 *   (
+	 *       [status]  => (bool) 성공 실패 여부
+	 *       [error]   => (string) status false시 에러 메시지
+	 *       [rcptlog] => (array) rcpt to에 대한 log
+	 *   )
+	 *   </pre>
 	 *
-	 * @param  object $o mail object
-	 *       - o->rpath  : return path (optional)
-	 *       - o->from   : Sender address
-	 *       - o->to     : [Array] Reciever address
-	 *       - o->cc     : [Array] See also reciever address
-	 *       - o->bcc    : [Array] Hidden see also reciever address
-	 *       - o->subjet : mail subject
-	 *       - o->body   : mail contents
-	 *       - o->pbody  : planin/text mail contents (optional)
-	 *       - o->attach : [Array] attached files (optional)
+	 *   RCPT list별로 확인을 위해서 status가 true이더라도 rcptlog를
+	 *   확인하는 것이 필요
+	 *
+	 * @param  stdClass $o mail object
+	 *   <pre>
+	 *   stdClass Object
+	 *   (
+	 *       [rpath]  => (string) return path (optional)
+	 *       [from]   => (string) Sender address
+	 *       [to]     => (array) Reciever address
+	 *       [cc]     => (array) See also reciever address
+	 *       [bcc]    => (array) Hidden see also reciever address
+	 *       [subjet] => (string) mail subject
+	 *       [body]   => (string) mail contents
+	 *       [pbody]  => (string) planin/text mail contents (optional)
+	 *       [attach] => (array) attached files (optional)
+	 *   )
+	 *   </pre>
 	 */
 	public function send ($o) {
 		$template = $this->source ($o);
@@ -110,15 +121,20 @@ Class MTA extends MTA_Generate {
 	 *
 	 * @access public
 	 * @return string If occur error, throw excption
-	 * @param  object $v mail object
-	 *       - $v->from   : Sender address
-	 *       - $v->to     : array of Reciever address
-	 *       - $v->cc     : array of See also reciever address
-	 *       - $v->bcc    : array of Hidden see also reciever address
-	 *       - $v->subjet : mail subject
-	 *       - $v->body   : mail contents
-	 *       - $v->pbody  : planin/text mail contents (optional)
-	 *       - $v->attach : attached files (array / optional)
+	 * @param  stdClass $v mail object
+	 *   <pre>
+	 *   stdClass Object
+	 *   (
+	 *       [from]   => (string) Sender address
+	 *       [to]     => (array) Reciever address
+	 *       [cc]     => (array) See also reciever address (optional)
+	 *       [bcc]    => (array) Hidden see also reciever address (optional)
+	 *       [subjet] => (string) mail subject
+	 *       [body]   => (string) mail contents
+	 *       [pbody]  => (string) planin/text mail contents (optional)
+	 *       [attach] => (array) attached files (optional)
+	 *   )
+	 *   </pre>
 	 */
 	public function source ($v) {
 		$template = file_get_contents ('MTA/template.txt', true);
