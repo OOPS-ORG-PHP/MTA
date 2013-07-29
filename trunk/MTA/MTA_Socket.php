@@ -41,7 +41,7 @@ Class MTA_Socket {
 	 *
 	 * @access protected
 	 * @return stdClass
-	 * @param  object $o mail object
+	 * @param  stdClass $o mail object
 	 *   <pre>
 	 *   stdClass Object
 	 *   (
@@ -122,7 +122,7 @@ Class MTA_Socket {
 	 *   RCPT list별로 확인을 위해서 status가 true이더라도 rcptlog를
 	 *   확인하는 것이 필요
 	 *
-	 * @param  object $o mail object
+	 * @param  stdClass $o mail object
      *   <pre>
      *   stdClass Object
      *   (
@@ -229,7 +229,7 @@ Class MTA_Socket {
 	 * 
 	 * @access protected
 	 * @return bool
-	 * @param  object $o mail object
+	 * @param  stdClass $o mail object
 	 *       - o->from   : Sender address
 	 *       - o->to     : array of Reciever address
 	 *       - o->cc     : array of See also reciever address
@@ -271,7 +271,7 @@ Class MTA_Socket {
 	 * 
 	 * @access protected
 	 * @return bool
-	 * @param  object $o MTA_Socket::target_object method의 rcpt list
+	 * @param  stdClass $o MTA_Socket::target_object method의 rcpt list
 	 * @param  array &$log 발송 로그
 	 */
 	protected function rcptto ($o, &$log) {
