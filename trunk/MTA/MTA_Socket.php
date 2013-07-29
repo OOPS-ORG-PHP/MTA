@@ -314,7 +314,7 @@ Class MTA_Socket {
 			"    by {$smtp} with ESMTP id " . uniqid () . ";\r\n" .
 			'    ' . $this->date () . "\r\n";
 
-		$this->write ($received . $v . '.');
+		$this->write ($received . $v . "\r\n.");
 
 		if ( $this->read () === false )
 			return false;
