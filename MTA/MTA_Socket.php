@@ -40,11 +40,16 @@ Class MTA_Socket {
 	 * 별로 모음
 	 *
 	 * @access protected
-	 * @return object
+	 * @return stdClass
 	 * @param  object $o mail object
-	 *       - o->to  (array) to list
-	 *       - o->cc  (array) cc list
-	 *       - o->bcc (array) bcc list
+	 *   <pre>
+	 *   stdClass Object
+	 *   (
+	 *       [to]  => (array) to list
+	 *       [cc]  => (array) cc list
+	 *       [bcc] => (array) bcc list
+	 *   )
+	 *   </pre>
 	 */
 	protected function target_object ($o) {
 		if ( is_array ($o->to) )
@@ -104,24 +109,34 @@ Class MTA_Socket {
 	 * 메일 발송
 	 *
 	 * @access protected
-	 * @return object  발송 결과를 object로 반환한다.
-	 *                 - r->status : 성공 실패 여부를 boolean으로 반환
-	 *                 - r->error  : status false시 에러 메시지
-	 *                 - r->rcptlog : rcpt to에 대한 log
+	 * @return stdClass  발송 결과를 object로 반환한다.
+	 *   <pre>
+	 *   stdClass Object
+	 *   (
+	 *       [status]  => (boolean) 성공 실패 여부
+	 *       [error]   => (string|null) status false시 에러 메시지
+	 *       [rcptlog] => (array) rcpt to에 대한 log
+	 *   )
+	 *   </pre>
 	 *
-	 *    RCPT list별로 확인을 위해서 status가 true이더라도 rcptlog를
-	 *    확인하는 것이 필요
+	 *   RCPT list별로 확인을 위해서 status가 true이더라도 rcptlog를
+	 *   확인하는 것이 필요
 	 *
 	 * @param  object $o mail object
-	 *       - o->rpath  : return path (optional)
-	 *       - o->from   : Sender address
-	 *       - o->to     : [Array] Reciever address
-	 *       - o->cc     : [Array] See also reciever address
-	 *       - o->bcc    : [Array] Hidden see also reciever address
-	 *       - o->subjet : mail subject
-	 *       - o->body   : mail contents
-	 *       - o->pbody  : planin/text mail contents (optional)
-	 *       - o->attach : [Array] attached files (optional)
+     *   <pre>
+     *   stdClass Object
+     *   (
+	 *       [rpath]  => (string) return path (optional)
+	 *       [from]   => (string) Sender address
+	 *       [to]     => (array) Reciever address
+	 *       [cc]     => (array) See also reciever address
+	 *       [bcc]    => (array) Hidden see also reciever address
+	 *       [subjet] => (string) mail subject
+	 *       [body]   => (string) mail contents
+	 *       [pbody]  => (string) planin/text mail contents (optional)
+	 *       [attach] => (array) attached files (optional)
+     *   )
+     *   </pre>
 	 * @param string &$template 메일 본문
 	 */
 	protected function socket_send ($o, &$template) {
@@ -327,7 +342,7 @@ Class MTA_Socket {
 	/**
 	 * @access protected
 	 * @return bool
-	 * @param object $o MTA_Socket::target_object method 반환값
+	 * @param stdClass $o MTA_Socket::target_object method 반환값
 	 */
 	protected function open ($o) {
 		$this->error = false;
