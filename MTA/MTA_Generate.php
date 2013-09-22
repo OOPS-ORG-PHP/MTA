@@ -469,7 +469,7 @@ Class MTA_Generate extends MTA_Socket {
 	/**
 	 * Attach file의 template을 생성
 	 *
-	 * @access protect
+	 * @access public
 	 * @return string
 	 * @param array $attaches 파일 경로를 포함한 배열
 	 * @param string $bound boundary 문자열
