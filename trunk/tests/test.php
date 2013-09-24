@@ -46,10 +46,7 @@ try {
 	echo "\n";
 	echo ' ** test MTA::send method' . "\n\n";
 	$mta->verbose = true;
-	ob_start ();
-	print_r ($mta->send ($o));
-	$buf = ob_get_contents ();
-	ob_end_clean ();
+	$buf = print_r ($mta->send ($o), true);
 
 	echo preg_replace ('/^/m', '    ', $buf);
 	echo "\n";

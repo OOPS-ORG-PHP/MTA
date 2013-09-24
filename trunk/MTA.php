@@ -12,6 +12,9 @@
  * 공하며, 발송 시 중복된 메일 주소를 압축하여 중복된 메일 서버에
  * 여러번 접근하지 않도록 최적화 되어 있다.
  *
+ * 예제:
+ * {@example pear_MTA/tests/test.php}
+ *
  * @category   Networking
  * @package    MTA
  * @author     JoungKyun.Kim <http://oops.org>
@@ -37,6 +40,9 @@ require_once 'MTA/MTA_Generate.php';
 
 /**
  * MTA 없이 메일을 발송하기 위한 API
+ *
+ * 예제:
+ * {@example pear_MTA/tests/test.php}
  *
  * @package MTA
  */
@@ -74,6 +80,9 @@ Class MTA extends MTA_Generate {
 	// {{{ (object) public  MTA::send ($o)
 	/**
 	 * 메일 발송
+	 *
+	 * 예제:
+	 * {@example pear_MTA/tests/test.php 22 28}
 	 *
 	 * @access public
 	 * @return stdClass 발송 결과를 object로 반환한다.
@@ -118,6 +127,9 @@ Class MTA extends MTA_Generate {
 	/**
 	 * 주어진 정보를 이용하여 raw mail body를 alternative/mixed
 	 * 형식으로 반환
+	 *
+	 * 예제:
+	 * {@example pear_MTA/tests/test.php 22 22}
 	 *
 	 * @access public
 	 * @return string If occur error, throw excption
