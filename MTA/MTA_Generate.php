@@ -136,7 +136,7 @@ Class MTA_Generate extends MTA_Socket {
 	 * @access public
 	 * @return string
 	 * @param string $msg
-	 * @param bool $split true로 설정이 되면 76칼럼에서 line-break된
+	 * @param bool $split (optional) true로 설정이 되면 76칼럼에서 line-break된
 	 *                    base64 문자열을 반환한다.
 	 */
 	public function encode ($msg, $split = false) {
@@ -203,7 +203,7 @@ Class MTA_Generate extends MTA_Socket {
 	 * @access protected
 	 * @return bool 에러 발생시에, myException으로 에러를 보낸다.
 	 * @param  string $user 검사할 메일 주소의 local 섹션값
-	 * @param  bool   $method true로 설정하면, 에러 발생시에 false를 반환
+	 * @param  bool   $method (optional) true로 설정하면, 에러 발생시에 false를 반환
 	 */
 	protected function check_local ($user, $method = false) {
 		if ( $user[0] == '"' && $user[strlen ($user) - 1] == '"' ) {
@@ -232,7 +232,7 @@ Class MTA_Generate extends MTA_Socket {
 	 * @access protected
 	 * @return bool
 	 * @param  string $domain 검사할 메일 주소의 도메인 섹션
-	 * @param  bool   $method true로 설정하면, 에러 발생시에 false를 반환
+	 * @param  bool   $method (optional) true로 설정하면, 에러 발생시에 false를 반환
 	 */
 	protected function check_domain ($domain, $method = false) {
 		$domlen = strlen ($domain);
