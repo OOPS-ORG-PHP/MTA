@@ -10,7 +10,7 @@
  * @package    MTA
  * @subpackage MTA_Generate
  * @author     JoungKyun.Kim <http://oops.org>
- * @copyright  (c) 2013, JoungKyun.Kim
+ * @copyright  (c) 2014, JoungKyun.Kim
  * @license    BSD License
  * @version    SVN: $Id$
  * @link       http://pear.oops.org/package/MTA
