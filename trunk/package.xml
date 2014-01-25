@@ -11,10 +11,10 @@
 		<email>joungkyun@gmail.com</email>
 		<active>yes</active>
 	</lead>
-	<date>2013-09-25</date>
-	<time>01:21:29</time>
+	<date>2014-01-25</date>
+	<time>17:57:46</time>
 	<version>
-		<release>1.0.2</release>
+		<release>1.0.3</release>
 		<api>1.0.0</api>
 	</version>
 	<stability>
@@ -22,10 +22,7 @@
 		<api>stable</api>
 	</stability>
 	<license uri="http://www.opensource.org/licenses/bsd-license.php">BSD</license>
-	<notes>* 이메일 주소에서 utf-8 한글 사용 허용
-* php object 재사용 경고 문제 해결
-* rcptlog 중복 되는 문제 해결
-* GMail 수신 안되는 문제 해결
+	<notes>
 </notes>
 	<contents>
 		<dir name="/">
@@ -52,6 +49,20 @@
 	</dependencies>
 	<phprelease />
 	<changelog>
+		<release>
+			<version>
+				<release>1.0.3</release>
+				<api>1.0.0</api>
+			</version>
+			<stability>
+				<release>stable</release>
+				<api>stable</api>
+			</stability>
+			<date>2014-01-25</date>
+			<license uri="http://www.opensource.org/licenses/bsd-license.php">BSD</license>
+			<notes>
+</notes>
+		</release>
 		<release>
 			<version>
 				<release>1.0.2</release>
