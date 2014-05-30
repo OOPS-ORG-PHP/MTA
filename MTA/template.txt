@@ -4,7 +4,7 @@ Date: @DATE@
 From: @FROM@
 @CC@@BCC@To: @TO@
 Subject: @SUBJECT@
-User-Agent: pear_MTA
+User-Agent: @MAIL_AGENT@
 Content-Type: multipart/mixed;
               boundary="@BOUNDARY@"
 
