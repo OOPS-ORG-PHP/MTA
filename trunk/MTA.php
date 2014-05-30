@@ -61,6 +61,11 @@ Class MTA extends MTA_Generate {
 	 * @var boolean
 	 */
 	public $verbose = false;
+	/**
+	 * Mail agent 값. 기본값은 pear_MTA 이다.
+	 * @var string
+	 */
+	public $magent = 'pear_MTA';
 	/**#@-*/
 	/**
 	 * 내부적으로 사용할 socket descriptor
@@ -220,12 +225,13 @@ Class MTA extends MTA_Generate {
 		$src = array (
 			'/@MESSAGE_ID@/', '/@DATE@/', '/@FROM@/', '/@TO@/', '/@CC@/',
 			'/@BCC@/', '/@SUBJECT@/', '/@BOUNDARY@/', '/@SUB_BOUNDARY@/',
-			'/@PLAINBODY@/', '/@BODY@/', '/@ATTCHED@/'
+			'/@PLAINBODY@/', '/@BODY@/', '/@ATTCHED@/', '/@MAIL_AGENT@/',
 		);
 		$dst = array (
 			$o->msgid, $o->date, $o->from, $o->to,
 			$o->cc, $o->bcc, $o->subject, $o->boundary,
-			$o->subboundary, $o->pbody, $o->body, $attaches
+			$o->subboundary, $o->pbody, $o->body, $attaches,
+			$this->magent
 		);
 
 		return preg_replace ($src, $dst, $template);
