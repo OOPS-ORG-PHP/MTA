@@ -68,7 +68,7 @@ Class MTA_Socket {
 
 		if ( $o->bcc ) {
 			if ( is_array ($o->bcc) || is_object ($o->bcc) ) {
-				foreach ( $o->cc as $ad )
+				foreach ( $o->bcc as $ad )
 					$tmp[] = $ad;
 			} else
 				$tmp[] = $o->bcc;
