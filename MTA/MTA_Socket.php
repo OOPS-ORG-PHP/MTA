@@ -52,22 +52,25 @@ Class MTA_Socket {
 	 *   </pre>
 	 */
 	protected function target_object ($o) {
-		if ( is_array ($o->to) )
-			$tmp = $o->to;
-		else
+		if ( is_array ($o->to) || is_object ($o->to) ) {
+			foreach ( $o->to as $ad )
+				$tmp[] = $ad;
+		} else
 			$tmp = array ($o->to);
 
 		if ( $o->cc ) {
-			if ( is_array ($o->cc) )
-				$tmp = array_merge ($tmp, $o->cc);
-			else
+			if ( is_array ($o->cc) || is_object ($o->cc) ) {
+				foreach ( $o->cc as $ad )
+					$tmp[] = $ad;
+			} else
 				$tmp[] = $o->cc;
 		}
 
 		if ( $o->bcc ) {
-			if ( is_array ($o->bcc) )
-				$tmp = array_merge ($tmp, $o->bcc);
-			else
+			if ( is_array ($o->bcc) || is_object ($o->bcc) ) {
+				foreach ( $o->cc as $ad )
+					$tmp[] = $ad;
+			} else
 				$tmp[] = $o->bcc;
 		}
 
@@ -277,7 +280,7 @@ Class MTA_Socket {
 	protected function rcptto ($o, &$log) {
 		$status = array ();
 		$this->error = false;
-		if ( ! is_array ($o->rcpt) || ! count ($o->rcpt) ) {
+		if ( ! is_array ($o->rcpt) && ! is_object ($o->rcpt) || ! count ($o->rcpt) ) {
 			$this->error = 'No RCPT list';
 			return false;
 		}
