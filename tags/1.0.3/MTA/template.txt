@@ -1,0 +1,28 @@
+Message-ID: @MESSAGE_ID@
+MIME-Version: 1.0
+Date: @DATE@
+From: @FROM@
+@CC@@BCC@To: @TO@
+Subject: @SUBJECT@
+User-Agent: @MAIL_AGENT@
+Content-Type: multipart/mixed;
+              boundary="@BOUNDARY@"
+
+This is a multi-part message in MIME format.
+
+--@BOUNDARY@
+Content-Type: multipart/alternative;
+              boundary="@SUB_BOUNDARY@"
+
+--@SUB_BOUNDARY@
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: base64
+
+@PLAINBODY@
+--@SUB_BOUNDARY@
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: base64
+
+@BODY@
+--@SUB_BOUNDARY@--
+@ATTCHED@--@BOUNDARY@--
