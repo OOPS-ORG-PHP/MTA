@@ -12,7 +12,7 @@
 		<active>yes</active>
 	</lead>
 	<date>2014-08-14</date>
-	<time>17:54:55</time>
+	<time>18:35:29</time>
 	<version>
 		<release>1.0.4</release>
 		<api>1.0.0</api>
@@ -22,12 +22,12 @@
 		<api>stable</api>
 	</stability>
 	<license uri="http://www.opensource.org/licenses/bsd-license.php">BSD</license>
-	<notes>
+	<notes>* BCC가 존재할 경우 메일 발송 실패 수정
 </notes>
 	<contents>
 		<dir name="/">
 			<file role="php" md5sum="3e388dcb6bcc5fc0587cad4a4062ae80" name="MTA/MTA_Generate.php" />
-			<file role="php" md5sum="d6cdfbcb344bb269aefe614b3ab4e440" name="MTA/MTA_Socket.php" />
+			<file role="php" md5sum="4eb77bea085d6360204b1fd6f1fb0360" name="MTA/MTA_Socket.php" />
 			<file role="php" md5sum="5e9e6f07289d186ec0dd940b440f27d4" name="MTA/template.txt" />
 			<file role="php" md5sum="d505b317690261607eb93b8acd48252a" name="MTA.php" />
 		</dir>
@@ -60,7 +60,7 @@
 			</stability>
 			<date>2014-08-14</date>
 			<license uri="http://www.opensource.org/licenses/bsd-license.php">BSD</license>
-			<notes>
+			<notes>* BCC가 존재할 경우 메일 발송 실패 수정
 </notes>
 		</release>
 		<release>
