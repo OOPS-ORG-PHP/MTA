@@ -170,7 +170,7 @@ Class MTA extends MTA_Generate {
 		}
 
 		$this->addr ($o->from);
-		if ( is_array ($o->to) ) {
+		if ( is_array ($o->to) || is_object ($o->to) ) {
 			foreach ( $o->to as $val ) {
 				$this->addr ($val);
 				$to .= $val . ', ';
@@ -181,7 +181,7 @@ Class MTA extends MTA_Generate {
 			$this->addr ($o->to);
 
 		if ( $o->cc ) {
-			if ( is_array ($o->cc) ) {
+			if ( is_array ($o->cc) || is_object ($o->cc) ) {
 				foreach ( $o->cc as $val ) {
 					$this->addr ($val);
 					$cc .= $val . ', ';
@@ -195,7 +195,7 @@ Class MTA extends MTA_Generate {
 		}
 
 		if ( $o->bcc ) {
-			if ( is_array ($o->bcc) ) {
+			if ( is_array ($o->bcc) || is_object ($o->bcc) ) {
 				foreach ( $o->bcc as $val ) {
 					$this->addr ($val) . ', ';
 					$bcc .= $val . ', ';
