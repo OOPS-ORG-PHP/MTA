@@ -12,9 +12,9 @@
 		<active>yes</active>
 	</lead>
 	<date>2014-08-14</date>
-	<time>17:53:13</time>
+	<time>17:54:55</time>
 	<version>
-		<release>1.0.3</release>
+		<release>1.0.4</release>
 		<api>1.0.0</api>
 	</version>
 	<stability>
@@ -22,8 +22,7 @@
 		<api>stable</api>
 	</stability>
 	<license uri="http://www.opensource.org/licenses/bsd-license.php">BSD</license>
-	<notes>* Mail agent를 변경기능 지원
-* 메일 주소 리스트에 Array 외에 stdClass 허용
+	<notes>
 </notes>
 	<contents>
 		<dir name="/">
@@ -50,6 +49,20 @@
 	</dependencies>
 	<phprelease />
 	<changelog>
+		<release>
+			<version>
+				<release>1.0.4</release>
+				<api>1.0.0</api>
+			</version>
+			<stability>
+				<release>stable</release>
+				<api>stable</api>
+			</stability>
+			<date>2014-08-14</date>
+			<license uri="http://www.opensource.org/licenses/bsd-license.php">BSD</license>
+			<notes>
+</notes>
+		</release>
 		<release>
 			<version>
 				<release>1.0.3</release>
