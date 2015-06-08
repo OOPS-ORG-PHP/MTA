@@ -1,129 +1,134 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<package version="2.0" packagerversion="1.7.2" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
-	<!-- $Id$ -->
-	<name>MTA</name>
-	<channel>pear.oops.org</channel>
-	<summary>Mail Transfer Agent(MTA) Abstraction Layer</summary>
-	<description>MTA is a Mail Transfer Agent(MTA) abstraction layer providing</description>
-	<lead>
-		<name>JoungKyun.Kim</name>
-		<user>joungkyun</user>
-		<email>joungkyun@gmail.com</email>
-		<active>yes</active>
-	</lead>
-	<date>2015-06-09</date>
-	<time>03:24:49</time>
-	<version>
-		<release>1.0.4</release>
-		<api>1.0.0</api>
-	</version>
-	<stability>
-		<release>stable</release>
-		<api>stable</api>
-	</stability>
-	<license uri="http://www.opensource.org/licenses/bsd-license.php">BSD</license>
-	<notes>* BCC가 존재할 경우 메일 발송 실패 수정
+<package packagerversion="1.9.4" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
+ <name>MTA</name>
+ <channel>pear.oops.org</channel>
+ <summary>Mail Transfer Agent(MTA) Abstraction Layer</summary>
+ <description>MTA is a Mail Transfer Agent(MTA) abstraction layer providing</description>
+ <lead>
+  <name>JoungKyun.Kim</name>
+  <user>joungkyun</user>
+  <email>joungkyun@gmail.com</email>
+  <active>yes</active>
+ </lead>
+ <date>2015-06-09</date>
+ <time>03:24:49</time>
+ <version>
+  <release>1.0.4</release>
+  <api>1.0.0</api>
+ </version>
+ <stability>
+  <release>stable</release>
+  <api>stable</api>
+ </stability>
+ <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD</license>
+ <notes>
+* BCC가 존재할 경우 메일 발송 실패 수정
 * mail source에 BCC가 표기되는 문제 수정
-</notes>
-	<contents>
-		<dir name="/">
-			<file role="php" md5sum="70f4b722cc61d259732ff8e24720231b" name="MTA/MTA_Generate.php" />
-			<file role="php" md5sum="fbf036dfaefebe958942377d510ac09e" name="MTA/MTA_Socket.php" />
-			<file role="php" md5sum="ae8a6576510b1213cba293c18cf56a5a" name="MTA/template.txt" />
-			<file role="php" md5sum="b9b2e9fc22a1bacf18db7a6168affe3f" name="MTA.php" />
-		</dir>
-	</contents>
-	<dependencies>
-		<required>
-			<php>
-				<min>5.1.0</min>
-			</php>
-			<pearinstaller>
-				<min>1.4.3</min>
-			</pearinstaller>
-			<package>
-				<name>myException</name>
-				<channel>pear.oops.org</channel>
-				<min>1.0.0</min>
-			</package>
-		</required>
-	</dependencies>
-	<phprelease />
-	<changelog>
-		<release>
-			<version>
-				<release>1.0.4</release>
-				<api>1.0.0</api>
-			</version>
-			<stability>
-				<release>stable</release>
-				<api>stable</api>
-			</stability>
-			<date>2015-06-09</date>
-			<license uri="http://www.opensource.org/licenses/bsd-license.php">BSD</license>
-			<notes>* BCC가 존재할 경우 메일 발송 실패 수정
-</notes>
-		</release>
-		<release>
-			<version>
-				<release>1.0.3</release>
-				<api>1.0.0</api>
-			</version>
-			<stability>
-				<release>stable</release>
-				<api>stable</api>
-			</stability>
-			<date>2014-08-14</date>
-			<license uri="http://www.opensource.org/licenses/bsd-license.php">BSD</license>
-			<notes>* Mail agent를 변경기능 지원
+ </notes>
+ <contents>
+  <dir name="/">
+   <file md5sum="70f4b722cc61d259732ff8e24720231b" name="MTA/MTA_Generate.php" role="php" />
+   <file md5sum="fbf036dfaefebe958942377d510ac09e" name="MTA/MTA_Socket.php" role="php" />
+   <file md5sum="ae8a6576510b1213cba293c18cf56a5a" name="MTA/template.txt" role="php" />
+   <file md5sum="b9b2e9fc22a1bacf18db7a6168affe3f" name="MTA.php" role="php" />
+  </dir>
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>5.1.0</min>
+   </php>
+   <pearinstaller>
+    <min>1.4.3</min>
+   </pearinstaller>
+   <package>
+    <name>myException</name>
+    <channel>pear.oops.org</channel>
+    <min>1.0.0</min>
+   </package>
+  </required>
+ </dependencies>
+ <phprelease />
+ <changelog>
+  <release>
+   <version>
+    <release>1.0.4</release>
+    <api>1.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2015-06-09</date>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD</license>
+   <notes>
+* BCC가 존재할 경우 메일 발송 실패 수정
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>1.0.3</release>
+    <api>1.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2014-08-14</date>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD</license>
+   <notes>
+* Mail agent를 변경기능 지원
 * 메일 주소 리스트에 Array 외에 stdClass 허용
-</notes>
-		</release>
-		<release>
-			<version>
-				<release>1.0.2</release>
-				<api>1.0.0</api>
-			</version>
-			<stability>
-				<release>stable</release>
-				<api>stable</api>
-			</stability>
-			<date>2013-09-25</date>
-			<license uri="http://www.opensource.org/licenses/bsd-license.php">BSD</license>
-			<notes>* 이메일 주소에서 utf-8 한글 사용 허용
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>1.0.2</release>
+    <api>1.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2013-09-25</date>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD</license>
+   <notes>
+* 이메일 주소에서 utf-8 한글 사용 허용
 * php object 재사용 경고 문제 해결
 * rcptlog 중복 되는 문제 해결
 * GMail 수신 안되는 문제 해결
-</notes>
-		</release>
-		<release>
-			<version>
-				<release>1.0.1</release>
-				<api>1.0.0</api>
-			</version>
-			<stability>
-				<release>stable</release>
-				<api>stable</api>
-			</stability>
-			<date>2013-06-10</date>
-			<license uri="http://www.opensource.org/licenses/bsd-license.php">BSD</license>
-			<notes>* send() 시에 to/cc/bcc list들중 일부 실패시에 전체 list가 발송 실패하는 문제 수정
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>1.0.1</release>
+    <api>1.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2013-06-10</date>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD</license>
+   <notes>
+* send() 시에 to/cc/bcc list들중 일부 실패시에 전체 list가 발송 실패하는 문제 수정
 * 발송시 rcpt list중 일부만 전송되는 것을 확인하기 위하여 rcptlog property를 추가
-</notes>
-		</release>
-		<release>
-			<version>
-				<release>1.0.0</release>
-				<api>1.0.0</api>
-			</version>
-			<stability>
-				<release>stable</release>
-				<api>stable</api>
-			</stability>
-			<date>2013-06-08</date>
-			<license uri="http://www.opensource.org/licenses/bsd-license.php">BSD</license>
-			<notes>* release 1.0.0
-</notes>
-		</release>
-	</changelog>
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>1.0.0</release>
+    <api>1.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2013-06-08</date>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD</license>
+   <notes>
+* release 1.0.0
+   </notes>
+  </release>
+ </changelog>
 </package>
