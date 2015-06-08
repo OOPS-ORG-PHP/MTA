@@ -2,7 +2,7 @@ Message-ID: @MESSAGE_ID@
 MIME-Version: 1.0
 Date: @DATE@
 From: @FROM@
-@CC@@BCC@To: @TO@
+@CC@To: @TO@
 Subject: @SUBJECT@
 User-Agent: @MAIL_AGENT@
 Content-Type: multipart/mixed;
