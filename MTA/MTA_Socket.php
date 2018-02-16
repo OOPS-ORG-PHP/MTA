@@ -1,6 +1,6 @@
 <?php
 /**
- * Project: MTA_Socket :: pear_MTA socket abstraction layer<br />
+ * Project: MTA_Socket :: MTA socket abstraction layer<br />
  * File:    MTA/MTA_Socket.php
  *
  * eSNMP_Socket class는 소켓으로 메일을 발송하기 위한 추상
@@ -10,7 +10,7 @@
  * @package    MTA
  * @subpackage MTA_Socket
  * @author     JoungKyun.Kim <http://oops.org>
- * @copyright  (c) 2015, JoungKyun.Kim
+ * @copyright  (c) 2018, OOPS.org
  * @license    BSD License
  * @version    SVN: $Id$
  * @link       http://pear.oops.org/package/MTA

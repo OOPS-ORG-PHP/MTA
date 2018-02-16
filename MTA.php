@@ -2,9 +2,9 @@
 /**
  * Project: pear Mail Transfer Agent(MTA)<br />
  * File:    MTA.php<br />
- * Dependency: {@link http://svn.oops.org/wsvn/PHP.pear_myException pear_myException}
+ * Dependency: {@link https://github.com/OOPS-ORG-PHP/myException myException}
  *
- * pear_MTA는 php mail function을 대체할 수 있으며, smtp server나
+ * MTA는 php mail function을 대체할 수 있으며, smtp server나
  * smtp daemon이 없더라도 자체적으로 메일을 발송할 수 있는 기능을
  * 제공한다.
  *
@@ -13,14 +13,13 @@
  * 여러번 접근하지 않도록 최적화 되어 있다.
  *
  * 예제:
- * {@example pear_MTA/tests/test.php}
+ * {@example MTA/tests/test.php}
  *
  * @category   Networking
  * @package    MTA
  * @author     JoungKyun.Kim <http://oops.org>
- * @copyright  (c) 2015 OOPS.org
+ * @copyright  (c) 2018, OOPS.org
  * @license    BSD License
- * @version    SVN: $Id$
  * @link       http://pear.oops.org/package/MTA
  * @filesource
  */
@@ -42,7 +41,7 @@ require_once 'MTA/MTA_Generate.php';
  * MTA 없이 메일을 발송하기 위한 API
  *
  * 예제:
- * {@example pear_MTA/tests/test.php}
+ * {@example MTA/tests/test.php}
  *
  * @package MTA
  */
@@ -62,10 +61,10 @@ Class MTA extends MTA_Generate {
 	 */
 	public $verbose = false;
 	/**
-	 * Mail agent 값. 기본값은 pear_MTA 이다.
+	 * Mail agent 값. 기본값은 oops\MTA 이다.
 	 * @var string
 	 */
-	public $magent = 'pear_MTA';
+	public $magent = 'oops\MTA';
 	/**#@-*/
 	/**
 	 * 내부적으로 사용할 socket descriptor
@@ -87,7 +86,7 @@ Class MTA extends MTA_Generate {
 	 * 메일 발송
 	 *
 	 * 예제:
-	 * {@example pear_MTA/tests/test.php 22 28}
+	 * {@example MTA/tests/test.php 22 28}
 	 *
 	 * @access public
 	 * @return stdClass 발송 결과를 object로 반환한다.
@@ -134,7 +133,7 @@ Class MTA extends MTA_Generate {
 	 * 형식으로 반환
 	 *
 	 * 예제:
-	 * {@example pear_MTA/tests/test.php 22 22}
+	 * {@example MTA/tests/test.php 22 22}
 	 *
 	 * @access public
 	 * @return string If occur error, throw excption

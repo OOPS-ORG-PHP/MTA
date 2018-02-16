@@ -1,6 +1,6 @@
 <?php
 /*
- * Test code for pear_MTA
+ * Test code for MTA
  * $Id$
  */
 
